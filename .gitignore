@@ -1,0 +1,7 @@
+/node_modules
+/app
+/build
+/dist
+/.env
+/src/_old
+/*.env
