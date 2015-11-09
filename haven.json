@@ -1,0 +1,14 @@
+{
+    "name": "account-shield-demo",
+    "version": "0.1.0-SNAPSHOT",
+    "artifacts": [{
+        "files": [{
+            "dist": "."
+        }]
+    }],
+    "repositories": {
+        "distribution": [{
+            "url": "http://internal.echo-central.com/haven-repository"
+        }]
+    }
+}

@@ -4,7 +4,10 @@ module.exports = function(grunt) {
 
   var target = grunt.option('target') || 'dev';
 
-  require('dotenv').load({silent: true, path: target + ".env"});
+  require('dotenv').load({
+    silent: true,
+    path: target + ".env"
+  });
 
   var includes = ["**/*", "!**/_*.html"];
 
@@ -70,14 +73,17 @@ module.exports = function(grunt) {
   });
   merge(config, {
     compress: {
-      main: {
+      dist: {
         options: {
-          mode: 'gzip'
+          mode: "tgz",
+          archive: 'dist/<%= pkg.name %>.tar.gz'
         },
-        expand: true,
-        cwd: 'app/',
-        src: ['**/*'],
-        dest: 'dist/'
+        files: [{
+          expand: true,
+          src: ['**/*'],
+          cwd: "app",
+          dest: '',
+        }]
       }
     }
   });
