@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="js/materialize.min.js"></script>
 <script>
-$.ajax("p/esb/getMe", {success: function(user){
-    AS.extend(user.id);
-}});
+	$.ajax("p/esb/getMe", {success: function(user){
+		setTimeout(function(){AS.extend(user.id);},1000);
+	}});
 </script>

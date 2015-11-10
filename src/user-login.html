@@ -10,11 +10,11 @@
   <!--link href="css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection"-->
   <style type="text/css">
+    .toast.guide {max-width: 300px; height: auto; line-height: 1.25; background-color: #ffa726;}
+    #login-page {min-width: 350px;}
     #login-page [type="checkbox"]:not(:checked)+label:before {border-color: inherit;}
     #login-page [type="checkbox"]:checked+label:before {border-right-color: #ba68c8; border-bottom-color: #ba68c8;}
   </style>
-  
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>  
 </head>
 
 <body class="grey darken-2">
@@ -28,10 +28,10 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form">
+      <form class="login-form active-purple">
         <div class="row">
           <div class="input-field col s12 center">
-            <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+            <img src="images/growth-logo.png" alt="" class="circle responsive-img valign profile-image-login">
             <p class="center login-form-text">Growth Tree&trade; Login</p>
           </div>
         </div>
@@ -56,52 +56,58 @@
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
-            <input class="btn purple lighten-2 waves-effect waves-light col s12" type="submit" value="Login"/>
-          </div>
+          <button class="col s12 btn purple lighten-2 waves-effect waves-light" type="submit" name="action">Login</button>
         </div>
         <div class="row">
           <div class="input-field col s6 m6 l6">
             <p class="margin medium-small"><a class="purple-text" href="user-register.html">Register</a></p>
           </div>
           <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a class="purple-text" href="user-forgot-password.html">Forgot password?</a></p>
+            <p class="margin right-align medium-small"><a class="purple-text" href="user-forgot-password.html">Forgot password?</a></p>
           </div>          
         </div>
 
       </form>
-      <script>
-        $("form").submit(function(){
-          var loginUrl = "asLogin";
-          var data = $(this).serialize();
-          try{
-            data = data + "&sessionId=" + AS.sessionId;
-          }catch(e){};
-          $.ajax(
-            {
-              url: loginUrl, 
-              type: "POST",
-              data: data,
-              success: function(data, status, xhr){
-                window.location = data;
-              },
-              error: function(xhr){
-                if(xhr.status == 401){
-                  Materialize.toast("Invalid username or password", 4000, "error-message");
-                }else{
-                  Materialize.toast("Remote server error", 4000, "error-message");
-                }
-              }
-            }
-          ); 
-          return false;
-        });
-      </script>
     </div>
   </div>
 
   <!--  Scripts-->
   {% include "_tail.html" %}
+  <script type="text/javascript">
+    // Toast Notification
+    $(window).load(function() {
+        setTimeout(function() {
+            Materialize.toast('<p>Growth Tree is a fictional investment management site, which has been enhanced with <b>Account Shield</b><br><br>New to the demo? Click Register to set up an account</p>', 10000, 'guide');
+        }, 1000);
+    });
+  </script>
+  <script type="text/javascript">
+    $("form").submit(function(){
+      var loginUrl = "asLogin";
+      var data = $(this).serialize();
+      try{
+        data = data + "&sessionId=" + AS.sessionId;
+      }catch(e){};
+      $.ajax(
+        {
+          url: loginUrl, 
+          type: "POST",
+          data: data,
+          success: function(data, status, xhr){
+            window.location = data;
+          },
+          error: function(xhr){
+            if(xhr.status == 401){
+              Materialize.toast("Invalid username or password", 4000, "error-message");
+            }else{
+              Materialize.toast("Remote server error", 4000, "error-message");
+            }
+          }
+        }
+      ); 
+      return false;
+    });
+  </script>
 
   <!--plugins.js - Some Specific JS codes for Plugin Settings-->
   <script type="text/javascript" src="js/plugins.js"></script>
