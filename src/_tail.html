@@ -3,5 +3,6 @@
 <script>
 	$.ajax("p/esb/getMe", {success: function(user){
 		setTimeout(function(){AS.extend(user.id);},1000);
+		$(".user-name").html(user.name);
 	}});
 </script>
