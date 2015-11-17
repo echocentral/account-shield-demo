@@ -5,8 +5,8 @@ $("#clients-bar").sparkline([70, 80, 65, 78, 58, 80, 78, 80, 70, 50, 75, 65, 80,
     width: '100%',
     barWidth: 10,
     barSpacing: 4,
-    barColor: '#C7FCC9',
-    negBarColor: '#81d4fa',
+    barColor: '#B9DBEC',
+    negBarColor: '#C7EBFC',
     zeroColor: '#81d4fa',
     //tooltipFormat: $.spformat('{{value}}', 'tooltip-class')
 });

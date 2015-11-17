@@ -63,7 +63,7 @@
                                         </p>
                                     </div>
                                     <div class="card-action blue-grey darken-2">
-                                        <div id="clients-bar"></div>
+                                        <div id="sales-compositebar"></div>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                                         </p>
                                     </div>
                                     <div class="card-action blue-grey darken-2">
-                                        <div id="sales-compositebar"></div>
+                                        <div id="clients-bar"></div>
                                     </div>
                                 </div>
                             </div>                            
@@ -115,7 +115,7 @@
                     <!--work collections start-->
                     <div id="work-collections" class="section">
                         <div class="row">
-                            <div class="col s12">
+                            <div class="col s12 m6">
                                 <ul id="projects-collection" class="collection">
                                     <li class="collection-item avatar">
                                         <i class="mdi-file-folder circle blue-grey darken-2"></i>
@@ -181,15 +181,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                    <!--work collections end-->
-
-                    <!--card widgets start-->
-                    <div id="card-widgets" class="section">
-                        <div class="row">
-
-                            <div class="col s12 m12 l4">
+                            <div class="col s12 m6">
                                 <ul id="task-card" class="collection with-header">
                                     <li class="collection-header cyan">
                                         <h4 class="task-card-title">Dividends Due</h4>
@@ -221,7 +213,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--card widgets end-->
+                    <!--work collections end-->
 
                     <!-- //////////////////////////////////////////////////////////////////////////// -->
                 </div>
@@ -266,7 +258,7 @@
 
     <!-- chartjs>
     <script type="text/javascript" src="js/plugins/chartjs/chart.min.js"></script>
-    <script type="text/javascript" src="js/plugins/chartjs/chart-script.js"></script>
+    <script type="text/javascript" src="js/plugins/chartjs/chart-script.js"></script-->
 
     <!-- sparkline -->
     <script type="text/javascript" src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
@@ -288,8 +280,14 @@
     // Toast Notification
     $(window).load(function() {
         setTimeout(function() {
-            Materialize.toast('<span>Check out the Security option above (<i class="mdi-action-lock-outline grey-text text-lighten-4"></i>)</span>', 4000);
-        }, 10000);
+            Materialize.toast('<p>To see <b>Account Shield</b> in action, check out the User Security option above (<i class="mdi-action-lock-outline"></i>) which uses our easily-integrated standard popup screen to deliver end-user functionality.</p>', 20000, 'guide');
+        }, 1000);
+        setTimeout(function() {
+            Materialize.toast('<p>Or select the User Security option from the left-hand menu to see the same functionality delivered using a different approach of embedded code which gives you total control over look and feel.</p>', 20000, 'guide');
+        }, 15000);
+        setTimeout(function() {
+            Materialize.toast('<p>To see how <b>Account Shield</b> stops hackers gaining account access, try logging in using the same credentials from a different device.</p>', 20000, 'guide');
+        }, 30000);
     });
 
     $(function() {
