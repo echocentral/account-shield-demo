@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: "src",
-          src: ["**/*"],
+          src: ["**/*", "**/_*.html"],
           dest: "build/stage"
         }]
       },
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
           autoescape: true
         },
         dest: "build/stage/",
-        src: ['**/*.html', '!_*.html'],
+        src: ['**/*.html', '**/*.jsp', '!_*.html'],
         cwd: 'build/stage/',
         generateSitemap: false,
         generateRobotstxt: false,

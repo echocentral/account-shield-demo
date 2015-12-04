@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Growth Tree - Login</title>
+		{% include "_head.html" %}
+		<link href="css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+		<link href="css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+		<style type="text/css">
+			#login-page {min-width: 350px;}
+			#login-page [type="checkbox"]:not(:checked)+label:before {border-color: inherit;}
+			#login-page [type="checkbox"]:checked+label:before {border-right-color: #ba68c8; border-bottom-color: #ba68c8;}
+			.target-msg {height: 0; overflow: hidden;}
+			.target-msg:target {height: 3rem; animation: 0.5s fadeout 10s forwards;}
+			@keyframes fadeout {to {height: 0; opacity: 0;}}
+		</style>
+	</head>
+
+<body class="grey darken-2">
+	<!-- Start Page Loading -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>        
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+	<!-- End Page Loading -->
+
+	<div id="login-page" class="row">
+		<div class="col s12 z-depth-4 card-panel">
+			<form class="login-form active-purple" method="post" action="_login-process.jsp">
+				<input id="asid" name="asid" type="hidden">
+				<div class="row">
+					<div class="input-field col s12 center">
+						<img src="images/growth-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+						<p class="center login-form-text">Growth Tree&trade; Login</p>
+					</div>
+				</div>
+				<div id="invalid" class="row target-msg">
+					<div class="col s12">
+						<p class="center-align red white-text">Invalid username or password</p>
+					</div>
+				</div>				
+				<div id="logout" class="row target-msg">
+					<div class="col s12">
+						<p class="center-align blue-text">You were successfully logged out</p>
+					</div>
+				</div>				
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="mdi-social-person-outline prefix"></i>
+						<input id="email" name="email" type="email" required>
+						<label for="email" class="center-align">Email</label>
+					</div>
+				</div>
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="mdi-action-lock-outline prefix"></i>
+						<input id="password" name="password" type="password" required>
+						<label for="password">Password</label>
+					</div>
+				</div>
+				<div class="row">          
+					<div class="input-field col s12 login-text right-align">
+						<input type="checkbox" id="remember-me" />
+						<label for="remember-me">Remember me</label>
+					</div>
+				</div>
+				<div class="row">
+					<button class="col s12 btn purple lighten-2 waves-effect waves-light" type="submit" name="action" onclick="$('#asid').val(AS.sessionId);">Login</button>
+				</div>
+				<div class="row">
+					<div class="input-field col s6 m6 l6">
+						<p class="margin medium-small"><a class="purple-text" href="#" onclick="location.replace('register.html')">Register</a></p>
+					</div>
+					<div class="input-field col s6 m6 l6">
+						<p class="margin right-align medium-small"><a class="purple-text" href="#">Forgot password?</a></p>
+					</div>          
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!--  Scripts-->
+	{% include "_jsp-tail.jsp" %}
+	<script type="text/javascript">
+		// Toast Notification
+		$(window).load(function() {
+			setTimeout(function() {
+				Materialize.toast('<p>Growth Tree is a fictional investment management site, which has been enhanced with <b>Account Shield</b><br><br>New to the demo? Click Register to set up an account</p>', 20000, 'guide');
+			}, 1000);
+		});
+	</script>
+	<script type="text/javascript">$('body').addClass('loaded');</script>
+</body>
+
+</html>

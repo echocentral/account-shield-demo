@@ -1,0 +1,52 @@
+            <aside id="left-sidebar-nav">
+                <style type="text/css" scoped>
+                    #left-sidebar-nav .sidebar-collapse {left: -175px; top: -50px;}
+                    #slide-out {top: 65px !important; padding-top: 1rem;}
+                    #slide-out .divider {margin: 7rem 0 0;}
+                </style>
+                <ul id="slide-out" class="side-nav fixed leftside-navigation">
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold"><a class="collapsible-header active waves-effect waves-cyan" href="#" onclick="location.replace('index.jsp')"><i class="mdi-action-dashboard"></i> Dashboard</a>
+                                <div class="collapsible-body">
+                                    <ul>     
+                                        <li><a href="#">Managed fund</a></li>
+                                        <li><a href="#">High growth fund</a></li>
+                                        <li><a href="#">Savings account</a></li>
+                                        <li><a href="#">Feeder account</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="bold {% if option == 2 %}active{% endif %}"><a href="#" onclick="location.replace('mailbox.jsp')" class="waves-effect waves-cyan"><i class="mdi-communication-email"></i> Mailbox <span class="new badge">4</span></a>
+                    </li>
+                    <li class="bold {% if option == 3 %}active{% endif %}"><a href="#" onclick="location.replace('calendar.jsp')" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calendar</a>
+                    </li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold"><a class="collapsible-header active waves-effect waves-cyan"><i class="mdi-action-account-circle"></i> User</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="#">User Profile</a></li>
+                                        <li><a class="orange-text" href="#" onclick="AS.showUserDashboard()">User Security</a></li>
+                                        <li><a href="#" onclick="location.replace('_logout-process.jsp')">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="li-hover"><div class="divider"></div></li>
+                    <li class="li-hover"><p class="ultra-small margin more-text">Overall movement</p></li>
+                    <li class="li-hover">
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <div class="sample-chart-wrapper">                            
+                                    <div class="ct-chart ct-golden-section" id="ct2-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only purple lighten-2"><i class="mdi-navigation-menu"></i></a>
+            </aside>
